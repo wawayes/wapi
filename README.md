@@ -1,28 +1,30 @@
-# SpringBoot 项目初始模板
++ wapi-backend 后台
 
-> by [程序员鱼皮知识星球](https://walker.icu)
+- wapi-client-sdk
+- wapi-gateway 网关
+  - 隐藏后台数据传输（避免暴露出secretKey）
+  - 路由分发
+  - 统一鉴权
+  - 限流
+  - 日志集中处理
+  - 统一业务处理
+  - 访问控制（白名单-限制ddos）
+- wapi-common 公共部分的抽取，简洁代码
 
-Java SpringBoot 项目初始模板，整合了常用框架和示例代码，大家可以在此基础上快速开发自己的项目。
 
-## 模板功能
 
-- Spring Boot 2.7.0（贼新）
-- Spring MVC
-- MySQL 驱动
-- MyBatis
-- MyBatis Plus
-- Spring Session Redis 分布式登录
-- Spring AOP
-- Apache Commons Lang3 工具类
-- Lombok 注解
-- Swagger + Knife4j 接口文档
-- Spring Boot 调试工具和项目处理器
-- 全局请求响应拦截器（记录日志）
-- 全局异常处理器
-- 自定义错误码
-- 封装通用响应类
-- 示例用户注册、登录、搜索功能
-- 示例单元测试类
-- 示例 SQL（用户表）
+- Spring Boot
+- Spring Boot Starter(SDK开发)
+- Dubbo (RPC)
+- Nacos(注册中心)
+- Spring Cloud Gateway(网关、限流、日志实现)
 
-访问 localhost:7529/api/doc.html 就能在线调试接口了，不需要前端配合啦~
+
+
+- wapi-backend：7529端口，后端接口管理（上传、下线、用户登录）[http://localhost:7529/api/doc.html](https://gitee.com/link?target=http%3A%2F%2Flocalhost%3A7529%2Fapi%2Fdoc.html)
+- wapi-gateway：8090端口，网关
+- wapi-interface：8123端口，提供各种接口服务（可以有很多个且分布在各个服务器）。
+- wapi-client-sdk：客户端SDK，无端口，发送请求到8090端口，由网关进行转发到后端的api-interface
+
+![image](https://user-images.githubusercontent.com/106217376/225377110-6e6371ba-9403-4c40-bcfa-a216847ca032.png)
+
