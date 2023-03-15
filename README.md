@@ -26,5 +26,5 @@
 - wapi-interface：8123端口，提供各种接口服务（可以有很多个且分布在各个服务器）。
 - wapi-client-sdk：客户端SDK，无端口，发送请求到8090端口，由网关进行转发到后端的api-interface
 
-![image](https://user-images.githubusercontent.com/106217376/225377110-6e6371ba-9403-4c40-bcfa-a216847ca032.png)
+![image](https://i.ibb.co/fdqQFjz/wapi.png)
 
